@@ -11,4 +11,34 @@
 
 console.log("ciao")
 
-//
+//recuperiamo il form dal DOM
+const formElement = document.getElementById('form')
+// console.dir(formElement)
+
+//recuperiamo gli elementi del form che verranno compilati
+const kmElement = document.getElementById("text-km")
+const etaElement = document.getElementById("inputEta")
+const prezzoElement = document.getElementById('text-prezzo')
+
+
+//assegniamo il listener dell'evento submit al form
+//togliamo il funzionamento di default del form
+
+formElement.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    const km = kmElement.value
+    // console.log(km)
+    const eta = etaElement.value
+    // console.log(eta)
+})
+
+
+//calcoliamo lo sconto da applicare
+// -SE < 18
+// - - sconto 20%
+// - ALTRIMENTI SE > 65
+// - - sconto 40%
+// - ALTRIMENTI
+// - - prezzo intero
+
